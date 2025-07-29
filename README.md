@@ -15,7 +15,7 @@ A live dashboard built with React.js that listens to a WebSocket server for inco
   "hostname": "PC-01",
   "message": "Unauthorized process detected"
 }
-
+```
 Features
 1. Connects to a WebSocket server.
 
@@ -24,10 +24,9 @@ Features
 3. New alerts appear at the top of the list in real time.
 
 USAGE:
-``
+```
 git clone https://github.com/Rukundo-Bahati/real-time-alert-dashboard.git
 cd real-time-alert-dashboard
 npm install
 npm start
-
-``
+```
