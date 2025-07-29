@@ -1,73 +1,33 @@
-# Welcome to your Lovable project
+# Real-Time Alert Dashboard 🚨
 
-## Project info
+## Objective
+A live dashboard built with React.js that listens to a WebSocket server for incoming alerts in real time and displays them without needing a page refresh.
 
-**URL**: https://lovable.dev/projects/b772b8bb-47e0-4501-a83e-fb1825407a5b
+## 💻 Tech Stack
+- React.js
+- WebSockets
+- JavaScript (ES6+)
 
-## How can I edit this code?
+## 📡 Expected Message Format
+```json
+{
+  "type": "alert",
+  "hostname": "PC-01",
+  "message": "Unauthorized process detected"
+}
 
-There are several ways of editing your application.
+Features
+1. Connects to a WebSocket server.
 
-**Use Lovable**
+2. Displays incoming alerts in a table format.
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/b772b8bb-47e0-4501-a83e-fb1825407a5b) and start prompting.
+3. New alerts appear at the top of the list in real time.
 
-Changes made via Lovable will be committed automatically to this repo.
+USAGE:
+``
+git clone https://github.com/Rukundo-Bahati/real-time-alert-dashboard.git
+cd real-time-alert-dashboard
+npm install
+npm start
 
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/b772b8bb-47e0-4501-a83e-fb1825407a5b) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+``
