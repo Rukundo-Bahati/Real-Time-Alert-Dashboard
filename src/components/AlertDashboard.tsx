@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Switch } from '@/components/ui/switch';
 import { AlertTriangle, Wifi, WifiOff, Moon, Sun, Activity } from 'lucide-react';
 import { useTheme } from 'next-themes';
+import AlertDetailsDialog from './AlertDetailsDialog';
 
 interface Alert {
   id: string;
@@ -20,6 +21,8 @@ const AlertDashboard: React.FC = () => {
   const [isConnected, setIsConnected] = useState(false);
   const [ws, setWs] = useState<WebSocket | null>(null);
   const [connectionAttempts, setConnectionAttempts] = useState(0);
+  const [selectedAlert, setSelectedAlert] = useState<Alert | null>(null);
+  const [dialogOpen, setDialogOpen] = useState(false);
   const { theme, setTheme } = useTheme();
 
   // Determine severity based on message content
@@ -126,6 +129,11 @@ const AlertDashboard: React.FC = () => {
     };
     
     setAlerts(prevAlerts => [newAlert, ...prevAlerts.slice(0, 99)]);
+  };
+
+  const handleAlertClick = (alert: Alert) => {
+    setSelectedAlert(alert);
+    setDialogOpen(true);
   };
 
   useEffect(() => {
@@ -288,9 +296,10 @@ const AlertDashboard: React.FC = () => {
                 {alerts.map((alert, index) => (
                   <div
                     key={alert.id}
-                    className={`p-4 border-b last:border-b-0 hover:bg-muted/50 transition-colors ${
+                    className={`p-4 border-b last:border-b-0 hover:bg-muted/50 transition-colors cursor-pointer ${
                       index === 0 ? 'alert-slide-in' : ''
                     }`}
+                    onClick={() => handleAlertClick(alert)}
                   >
                     <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
                       <div className="flex items-start gap-3 flex-1">
@@ -316,6 +325,13 @@ const AlertDashboard: React.FC = () => {
             )}
           </div>
         </Card>
+
+        {/* Alert Details Dialog */}
+        <AlertDetailsDialog
+          alert={selectedAlert}
+          open={dialogOpen}
+          onOpenChange={setDialogOpen}
+        />
       </div>
     </div>
   );
