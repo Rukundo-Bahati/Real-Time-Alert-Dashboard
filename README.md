@@ -25,8 +25,8 @@ Features
 
 USAGE:
 ```
-git clone https://github.com/Rukundo-Bahati/real-time-alert-dashboard.git
-cd real-time-alert-dashboard
+git clone https://github.com/Rukundo-Bahati/Real-Time-Alert-Dashboard.git
+cd 'Real-Time-Alert-Dashboard
 npm install
 npm start
 ```
