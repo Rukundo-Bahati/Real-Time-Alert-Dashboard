@@ -1,6 +1,7 @@
-# Real-Time Alert Dashboard 🚨
+# Real-Time Alert Dashboard 
 
-![alt text](image.png)
+<img width="1919" height="912" alt="Screenshot 2025-07-31 153737" src="https://github.com/user-attachments/assets/b6f172be-9315-40df-9a3a-5048041ae7eb" />
+
 
 ## Objective
 A live dashboard built with React.js that listens to a WebSocket server for incoming alerts in real time and displays them without needing a page refresh.
@@ -54,7 +55,7 @@ The app is built with React.js and uses WebSocket APIs to maintain a live connec
 
 ## File Structure and Component Roles
 
-```
+
 - **src/main.tsx**: Entry point of the React app. Renders the main `App` component into the root DOM element.
 - **src/App.tsx**: Main app component that sets up global providers including React Query, theme, tooltips, and routing. Defines routes for the main `Index` page and a catch-all `NotFound` page.
 - **src/pages/Index.tsx**: The main dashboard page. Manages alert state, handles WebSocket connections via `useWebSocket` hook, and renders the main UI components including `Header`, `AlertStats`, `AlertList`, and `AlertDetailsDialog`.
@@ -67,5 +68,5 @@ The app is built with React.js and uses WebSocket APIs to maintain a live connec
 - **src/utils/alertUtils.ts**: Utility functions for alert severity determination and related helpers.
 - **src/utils/timestamp.ts**: Utility functions for formatting timestamps.
 - **src/types/Alert.ts**: TypeScript type definitions for alert objects.
-```
+
 This structure provides a modular and maintainable codebase for the real-time alert dashboard application.
