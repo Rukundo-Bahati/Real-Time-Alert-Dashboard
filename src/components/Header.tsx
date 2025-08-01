@@ -44,9 +44,11 @@ const Header: React.FC<HeaderProps> = ({ isConnected, onGenerateDemoAlert }) => 
           </span>
         </div>
 
-        <Button onClick={onGenerateDemoAlert} variant="outline" size="sm">
-          Generate Demo Alert
-        </Button>
+        {!isConnected && (
+          <Button onClick={onGenerateDemoAlert} variant="outline" size="sm">
+            Generate Demo Alert
+          </Button>
+        )}
       </div>
     </div>
   );

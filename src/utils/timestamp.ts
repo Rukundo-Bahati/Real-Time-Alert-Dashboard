@@ -6,4 +6,4 @@ export const formatTimestamp = (timestamp: Date): string =>
       minute: '2-digit',
       second: '2-digit'
     });
-  
+    

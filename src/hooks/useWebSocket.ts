@@ -8,7 +8,7 @@ export const useWebSocket = (onNewAlert: (alert: Alert) => void) => {
 
   const connectWebSocket = useCallback(() => {
     try {
-      const wsUrl = 'ws://localhost:8080/alerts';
+      const wsUrl = 'ws://localhost:5566';
       const websocket = new WebSocket(wsUrl);
 
       websocket.onopen = () => {

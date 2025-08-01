@@ -70,3 +70,22 @@ The app is built with React.js and uses WebSocket APIs to maintain a live connec
 - **src/types/Alert.ts**: TypeScript type definitions for alert objects.
 
 This structure provides a modular and maintainable codebase for the real-time alert dashboard application.
+
+## Filter Feature
+The dashboard includes a powerful filter feature that allows users to filter alerts by severity, hostname, message content, or date. Use the filter dropdown to select the filter type, then enter or select the corresponding filter value. The alert list updates in real time to show only matching alerts, helping you quickly find relevant information.
+
+## Backend Connectivity
+The frontend connects to a backend WebSocket server that streams real-time alerts. To start the backend server, navigate to the `backend` folder and run:
+
+```bash
+node server.cjs
+```
+
+Ensure the backend server is running before starting the frontend to receive live alerts.
+
+## Demo Alerts and useEffect in Index.tsx
+For development or testing purposes, the app can generate demo alerts automatically. This is controlled by a `useEffect` hook in `src/pages/Index.tsx`. By default, this demo alert generation is disabled to prioritize live backend alerts.
+
+To enable demo alerts, uncomment the relevant `useEffect` code in `Index.tsx`. This allows the app to generate random alerts periodically, useful when the backend server is not available.
+
+
